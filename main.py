@@ -25,7 +25,6 @@ def add():
 @app.post('/')
 def add():
     task_content = request.form['task']
-    # task_content = request.form.get('task')
     lst.append(task_content)
     return redirect('/')
 
