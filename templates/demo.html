@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <center>
+    <h1>To Do List</h1>
+    </center>
+</head>
+<style>
+    table, td, th {border: 1:i:wq
+    px solid;}
+    table {border-collapse: collapse;}
+</style>
+<center>
+<table style="width:20%">
+        <tr>
+            <th>Task</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in lst: %}
+        <tr>
+            <td>{{ i }}</td>
+            <td>
+                <a href="delete/{{i}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+<form action = "/" method="POST">
+    <br>
+    <input  type = "text" id = "task" name = "task">
+    <button type="submit">Add task</button>
+</form>
+</center>
+</body>
+<!--{% for i in lst %}
+    {{i}} </br>
+{%  endfor %} -->
+</html>
