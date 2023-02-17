@@ -9,7 +9,7 @@ for i in l:
         d[i] = lst[i]
         print(d)
 
-
+'''
 @app.route('/', methods=["GET", "POST"])
 def add():
     if request.method == "POST":
@@ -19,6 +19,20 @@ def add():
         return redirect('/')
     else:
         return render_template("demo.html", lst=lst)
+'''
+
+
+@app.post('/')
+def add():
+    task_content = request.form['task']
+    # task_content = request.form.get('task')
+    lst.append(task_content)
+    return redirect('/')
+
+
+@app.get('/')
+def display():
+    return render_template("demo.html", lst=lst)
 
 
 @app.route('/delete/<string:content>')
@@ -29,4 +43,4 @@ def remove(content):
 
 if __name__ == '__main__':
     lst.clear()
-    app.run(debug=True, port=5003)
+    app.run(debug=True, port=5004)
