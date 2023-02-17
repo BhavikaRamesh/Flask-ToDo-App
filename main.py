@@ -8,7 +8,6 @@ for i in l:
     if i not in d:
         d[i] = lst[i]
         print(d)
-
 '''
 @app.route('/', methods=["GET", "POST"])
 def add():
